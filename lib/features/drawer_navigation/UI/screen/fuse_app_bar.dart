@@ -8,7 +8,6 @@ class FuseAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback? onNotificationTap;
   final VoidCallback? onProfileTap;
   final int notificationCount;
-  final String userInitials;
   final bool showBreadcrumb;
 
   const FuseAppBar({
@@ -18,7 +17,6 @@ class FuseAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.onNotificationTap,
     this.onProfileTap,
     this.notificationCount = 0,
-    this.userInitials = 'HG',
     this.showBreadcrumb = true,
   });
 
@@ -167,39 +165,39 @@ class FuseAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             const SizedBox(width: 8),
 
-            // User Avatar
-            GestureDetector(
-              onTap: onProfileTap,
-              child: Container(
-                width: 36,
-                height: 36,
-                decoration: BoxDecoration(
-                  gradient: const LinearGradient(
-                    colors: [Color(0xFF5B4FE8), Color(0xFF7B6FF0)],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  shape: BoxShape.circle,
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xFF5B4FE8).withOpacity(0.3),
-                      blurRadius: 8,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
-                ),
-                child: Center(
-                  child: Text(
-                    userInitials,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 12,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  ),
-                ),
-              ),
-            ),
+            // // User Avatar
+            // GestureDetector(
+            //   onTap: onProfileTap,
+            //   child: Container(
+            //     width: 36,
+            //     height: 36,
+            //     decoration: BoxDecoration(
+            //       gradient: const LinearGradient(
+            //         colors: [Color(0xFF5B4FE8), Color(0xFF7B6FF0)],
+            //         begin: Alignment.topLeft,
+            //         end: Alignment.bottomRight,
+            //       ),
+            //       shape: BoxShape.circle,
+            //       boxShadow: [
+            //         BoxShadow(
+            //           color: const Color(0xFF5B4FE8).withOpacity(0.3),
+            //           blurRadius: 8,
+            //           offset: const Offset(0, 2),
+            //         ),
+            //       ],
+            //     ),
+            //     child: Center(
+            //       child: Text(
+            //         userInitials,
+            //         style: const TextStyle(
+            //           color: Colors.white,
+            //           fontSize: 12,
+            //           fontWeight: FontWeight.w700,
+            //         ),
+            //       ),
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),

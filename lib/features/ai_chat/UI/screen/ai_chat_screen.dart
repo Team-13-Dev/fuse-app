@@ -1,13 +1,3 @@
-// lib/features/ai_chat/ui/ai_chat_screen.dart
-//
-// ─── pubspec.yaml dependencies needed ────────────────────────────────────────
-//   file_picker: ^8.0.3
-//   excel: ^4.0.2
-//   csv: ^6.0.0
-//   dio: ^5.4.0
-//   flutter_screenutil: any
-// ─────────────────────────────────────────────────────────────────────────────
-
 import 'dart:io';
 import 'dart:math' as math;
 
@@ -16,6 +6,7 @@ import 'package:dio/dio.dart';
 import 'package:excel/excel.dart' as xsl;
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:fuse_system/core/Networking/groq_service.dart';
 
@@ -312,7 +303,7 @@ class _AIChatScreenState extends State<AIChatScreen>
     List<ChatMessage> history,
     String userMessage,
   ) async {
-    const apiKey = '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';
+    final apiKey = dotenv.env['GROQ_API_KEY'] ?? '';
     const model = 'llama-3.1-8b-instant';
 
     final dio = Dio(

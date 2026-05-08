@@ -221,6 +221,16 @@ class _FuseDrawerState extends State<FuseDrawer>
                                 ),
                                 active: _active == 'categories',
                               ),
+                              // ── ADD THIS ──
+                              _NavItem(
+                                'Segmentation',
+                                Icons.auto_awesome_outlined,
+                                onTap: () => context.pushNamedAndRemoveUntil(
+                                  Routes.segmantsScreen,
+                                  predicate: (r) => false,
+                                ),
+                                active: _active == 'segmentation',
+                              ),
                             ]),
                             _buildSection('COMMERCE', [
                               _NavItem(

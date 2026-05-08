@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fuse_system/core/DI/dependency_injection.dart';
 import 'package:fuse_system/core/Routing/routes.dart';
-import 'package:fuse_system/features/ai_chat/UI/screen/ai_chat_screen.dart';
 import 'package:fuse_system/features/authentication_check/UI/screen/check_auth_screen.dart';
 import 'package:fuse_system/features/categories/UI/screen/categories_screen.dart';
 import 'package:fuse_system/features/categories/logic/cubit/categories_cubit.dart';
@@ -16,6 +15,8 @@ import 'package:fuse_system/features/order/UI/screen/orders_screen.dart';
 import 'package:fuse_system/features/order/logic/cubit/order_cubit.dart';
 import 'package:fuse_system/features/product/UI/screen/product_screen.dart';
 import 'package:fuse_system/features/product/logic/cubit/product_cubit.dart';
+import 'package:fuse_system/features/product_segmentation/UI/screen/segmentation_screen.dart';
+import 'package:fuse_system/features/product_segmentation/logic/cubit/product_segmentation_cubit.dart';
 import 'package:fuse_system/features/sign_up/UI/screen/sign_up_screen.dart';
 import 'package:fuse_system/features/sign_up/logic/cubit/signup_cubit.dart';
 
@@ -81,6 +82,14 @@ class AppRouter {
           builder: (_) => BlocProvider(
             create: (context) => getIt<LoginCubit>(),
             child: const LoginScreen(),
+          ),
+        );
+
+      case Routes.segmantsScreen:
+        return MaterialPageRoute(
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<ProductSegmentationCubit>(),
+            child: const SegmentaionPage(),
           ),
         );
 

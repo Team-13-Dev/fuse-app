@@ -18,6 +18,8 @@ import 'package:fuse_system/features/order/logic/cubit/order_cubit.dart';
 import 'package:fuse_system/features/product/data/repo/product_repo.dart';
 import 'package:fuse_system/features/product/logic/cubit/add_product_cubit.dart';
 import 'package:fuse_system/features/product/logic/cubit/product_cubit.dart';
+import 'package:fuse_system/features/product_segmentation/data/repo/product_segmentaion_repo.dart';
+import 'package:fuse_system/features/product_segmentation/logic/cubit/product_segmentation_cubit.dart';
 import 'package:fuse_system/features/segment/data/repo/segment_repo.dart';
 import 'package:fuse_system/features/segment/logic/cubit/segment_cubit.dart';
 import 'package:fuse_system/features/sign_up/data/repo/sign_up_repo.dart';
@@ -76,5 +78,13 @@ void setupGetIt() {
   getIt.registerFactory<DashboardRepo>(() => DashboardRepo(getIt()));
   getIt.registerFactory<DashboardMetricsCubit>(
     () => DashboardMetricsCubit(getIt()),
+  );
+
+  //product segmentaion
+  getIt.registerFactory<ProductSegmentaionRepo>(
+    () => ProductSegmentaionRepo(getIt()),
+  );
+  getIt.registerFactory<ProductSegmentationCubit>(
+    () => ProductSegmentationCubit(getIt()),
   );
 }

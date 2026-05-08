@@ -10,6 +10,7 @@ class ApiConstants {
   static const String profileEndPoint = "/me/context";
   static const String businessSwitchEndPoint = "/businesses/switch";
   static const String dashBoardEndPoint = "/metrics";
+  static const String productSegmentation = "/segments/product";
 }
 
 class ApiErrors {

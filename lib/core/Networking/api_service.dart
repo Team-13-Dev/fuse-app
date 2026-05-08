@@ -17,6 +17,8 @@ import 'package:fuse_system/features/order/data/model/add_order_response_model.d
 import 'package:fuse_system/features/order/data/model/order_response_model.dart';
 import 'package:fuse_system/features/product/data/model/product_request_model.dart';
 import 'package:fuse_system/features/product/data/model/product_response_model.dart';
+import 'package:fuse_system/features/product_segmentation/data/model/product_segmentation_response_model.dart';
+import 'package:fuse_system/features/product_segmentation/data/repo/product_segmentaion_repo.dart';
 import 'package:fuse_system/features/segment/data/model/segment_context_response_model.dart';
 import 'package:fuse_system/features/sign_up/data/model/sign_up_request_model.dart';
 import 'package:fuse_system/features/sign_up/data/model/sign_up_response_model.dart';
@@ -110,4 +112,8 @@ abstract class ApiService {
   Future<BusinessSwitchResponseModel> businessSwitch(
     @Body() BusinessSwitchRequestModel businessSwitchRequestModel,
   );
+
+  // product segmentation
+  @GET(ApiConstants.productSegmentation)
+  Future<ProductSegmentationResponseModel> getProductSegmenation();
 }
