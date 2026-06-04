@@ -89,7 +89,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (_) => BlocProvider(
             create: (context) => getIt<ProductSegmentationCubit>(),
-            child: const SegmentaionPage(),
+            child: const SegmentationPage(),
           ),
         );
 
